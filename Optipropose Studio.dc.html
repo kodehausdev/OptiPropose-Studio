@@ -3,6 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optipropose Studio — Independent Software Studio, Abuja</title>
+<meta name="description" content="An independent engineering studio shipping production-grade systems: logistics pipelines, AI order structuring, and enterprise HR platforms. Abuja, Nigeria. RC 9335843.">
+<link rel="canonical" href="https://optipropose.com">
+<meta name="theme-color" content="#0a0b0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2334d39a'/%3E%3Cpath d='M12 17V7M7 11l5-5 5 5' stroke='%2307130d' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+<meta property="og:title" content="Optipropose Studio — We build software people actually use.">
+<meta property="og:description" content="Independent engineering studio shipping production-grade systems: logistics pipelines, AI order structuring, and enterprise HR platforms. Abuja, Nigeria.">
+<meta property="og:url" content="https://optipropose.com">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://optipropose.com/assets/tcd.png">
+<meta name="twitter:card" content="summary_large_image">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -37,14 +48,14 @@
 
   <!-- ===================== NAV ===================== -->
   <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,11,10,.72);border-bottom:1px solid rgba(255,255,255,.07)">
-    <div style="max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <div style="max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;row-gap:8px">
       <a onClick="{{ goHome }}" style="display:flex;align-items:center;gap:11px;cursor:pointer">
         <span style="width:28px;height:28px;border-radius:6px;background:var(--accent,#34d39a);display:flex;align-items:center;justify-content:center">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#07130d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
         </span>
         <span style="font:400 15px 'Space Grotesk',sans-serif;letter-spacing:-.01em;color:#a1a1aa"><span style="font-weight:700;color:#ffffff">Optipropose</span> Studio</span>
       </a>
-      <div style="display:flex;align-items:center;gap:26px">
+      <div style="display:flex;align-items:center;gap:clamp(14px,2.5vw,26px);flex-wrap:wrap">
         <a class="lnk" onClick="{{ goProducts }}" style="font-size:14px;color:#a4ada6;cursor:pointer">Products</a>
         <a class="lnk" onClick="{{ goAbout }}" style="font-size:14px;color:#a4ada6;cursor:pointer">About</a>
         <a class="lnk" onClick="{{ goPrivacy }}" style="font-size:14px;color:#a4ada6;cursor:pointer">Privacy</a>
@@ -203,8 +214,8 @@
               <span style="display:inline-flex;align-items:center;gap:5px;font:500 11px 'JetBrains Mono',monospace;color:#e0a83a"><span style="width:6px;height:6px;border-radius:50%;background:#e0a83a"></span>BUILDING</span>
             </div>
             <h3 style="font:600 18px 'Space Grotesk',sans-serif;margin:0 0 7px">CordHR</h3>
-            <p style="margin:0 0 14px;color:#a4ada6;font-size:14px;line-height:1.5">HR, payroll and leave management run entirely from a WhatsApp bot — with a web dashboard for admins.</p>
-            <div style="display:flex;gap:7px;flex-wrap:wrap"><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:4px 9px;border-radius:6px">AI</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:4px 9px;border-radius:6px">WhatsApp</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:4px 9px;border-radius:6px">HR</span></div>
+            <p style="margin:0 0 14px;color:#a4ada6;font-size:14px;line-height:1.5">A full HR operating system — payroll, leave, compliance and employee records in one web dashboard, with a WhatsApp assistant for employees.</p>
+            <div style="display:flex;gap:7px;flex-wrap:wrap"><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:4px 9px;border-radius:6px">Payroll</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:4px 9px;border-radius:6px">Compliance</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:4px 9px;border-radius:6px">HR</span></div>
           </div>
         </div>
 
@@ -233,9 +244,9 @@
     <p style="font-size:18px;color:#a4ada6;max-width:600px;margin:0 0 60px;line-height:1.55">Products we own and run, plus custom software built for clients.</p>
 
     <!-- TCD row -->
-    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.08)">
-      <div style="border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;background:#0e100f"><img src="assets/tcd.png" alt="TCDGO" style="width:100%;display:block"/></div>
-      <div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.08)">
+      <div style="flex:1.1 1 380px;min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;background:#0e100f"><img src="assets/tcd.png" alt="TCDGO" style="width:100%;display:block"/></div>
+      <div style="flex:1 1 300px;min-width:0">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="font:500 10px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#8a938c;border:1px solid rgba(255,255,255,.14);padding:3px 8px;border-radius:20px">CLIENT WORK</span><span style="display:inline-flex;align-items:center;gap:5px;font:500 11px 'JetBrains Mono',monospace;color:var(--accent,#34d39a)"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent,#34d39a)"></span>LIVE</span></div>
         <h2 style="font:600 26px 'Space Grotesk',sans-serif;margin:0 0 12px">TCDGO Intelligent Operations Suite</h2>
         <p style="color:#a4ada6;font-size:15px;line-height:1.6;margin:0 0 16px">A live operations dashboard for a logistics business — tracking thousands of orders across zones, captains, partners and dispatch, with attendance and daily revenue at a glance. Built for one client; being re-architected as a multi-tenant platform.</p>
@@ -244,24 +255,24 @@
     </div>
 
     <!-- Optipropose row -->
-    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.08)">
-      <div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.08)">
+      <div style="flex:1 1 300px;min-width:0">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="font:500 10px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#8a938c;border:1px solid rgba(255,255,255,.14);padding:3px 8px;border-radius:20px">PRODUCT</span><span style="display:inline-flex;align-items:center;gap:5px;font:500 11px 'JetBrains Mono',monospace;color:var(--accent,#34d39a)"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent,#34d39a)"></span>LIVE</span></div>
         <h2 style="font:600 26px 'Space Grotesk',sans-serif;margin:0 0 12px">Optipropose</h2>
         <p style="color:#a4ada6;font-size:15px;line-height:1.6;margin:0 0 16px">The studio's first product: an AI proposal generator for freelancers and agencies. It writes strategy-aware proposals in minutes instead of days, so you spend less time on paperwork and more time winning work.</p>
-        <a class="lnk" href="https://optipropose.com" target="_blank" style="font:600 14px 'Instrument Sans';color:var(--accent,#34d39a)">Visit optipropose.com →</a>
+        <a class="lnk" href="https://app.optipropose.com" target="_blank" style="font:600 14px 'Instrument Sans';color:var(--accent,#34d39a)">Visit app.optipropose.com →</a>
       </div>
-      <div style="border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;background:#0e100f"><img src="assets/optipropose.png" alt="Optipropose" style="width:100%;display:block"/></div>
+      <div style="flex:1.1 1 380px;min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;background:#0e100f"><img src="assets/optipropose.png" alt="Optipropose" style="width:100%;display:block"/></div>
     </div>
 
     <!-- CordHR row -->
-    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
-      <div style="border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;background:#0e100f"><img src="assets/cordhr-whatsapp.png" alt="CordHR WhatsApp assistant" style="width:100%;display:block"/></div>
-      <div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
+      <div style="flex:1.1 1 380px;min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;background:#0e100f"><img src="assets/cordhr-whatsapp.png" alt="CordHR WhatsApp assistant" style="width:100%;display:block"/></div>
+      <div style="flex:1 1 300px;min-width:0">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="font:500 10px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#8a938c;border:1px solid rgba(255,255,255,.14);padding:3px 8px;border-radius:20px">PRODUCT</span><span style="display:inline-flex;align-items:center;gap:5px;font:500 11px 'JetBrains Mono',monospace;color:#e0a83a"><span style="width:6px;height:6px;border-radius:50%;background:#e0a83a"></span>BUILDING</span></div>
-        <h2 style="font:600 26px/1.2 'Space Grotesk',sans-serif;margin:0 0 12px">CordHR — Decentralized Workforce Ops via Mobile Chat</h2>
-        <p style="color:#a4ada6;font-size:15px;line-height:1.6;margin:0 0 16px">HR for small teams, run from WhatsApp. Employees request leave, get payslips and HR documents through a chat bot, while admins manage everything from a clean web dashboard. Currently in active development.</p>
-        <div style="display:flex;gap:7px;flex-wrap:wrap"><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:5px 10px;border-radius:6px">WhatsApp Bot</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:5px 10px;border-radius:6px">Payroll</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:5px 10px;border-radius:6px">Leave &amp; docs</span></div>
+        <h2 style="font:600 26px/1.2 'Space Grotesk',sans-serif;margin:0 0 12px">CordHR — The Full HR Operating System</h2>
+        <p style="color:#a4ada6;font-size:15px;line-height:1.6;margin:0 0 16px">Payroll automation, leave workflows, compliance tracking and employee records — unified in one web dashboard. Employees handle requests, payslips and HR documents through a built-in WhatsApp assistant. Currently in active development.</p>
+        <div style="display:flex;gap:7px;flex-wrap:wrap"><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:5px 10px;border-radius:6px">Payroll</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:5px 10px;border-radius:6px">Leave &amp; compliance</span><span style="font:500 11px 'JetBrains Mono',monospace;color:#6f7870;background:#171a17;padding:5px 10px;border-radius:6px">Web dashboard</span></div>
       </div>
     </div>
   </div>
@@ -275,7 +286,7 @@
     <div style="font-size:17px;line-height:1.7;color:#c3c9c3">
       <p style="margin:0 0 20px">Optipropose Studio is an independent software studio based in Abuja, Nigeria, registered with the Corporate Affairs Commission. It's run by one developer — <span style="color:#e9ece9">kodehausdev</span> — who designs, builds and ships every product end to end.</p>
       <p style="margin:0 0 20px">The studio started with <span style="color:#e9ece9">Optipropose</span>, an AI proposal generator, and the name stuck. Since then it's grown into a home for focused software: products we own and run, and custom tools we build for clients — like <span style="color:#e9ece9">TollyClassic</span>, a live logistics operations platform now being re-architected to serve many businesses at once.</p>
-      <p style="margin:0 0 20px">Right now the focus is <span style="color:#e9ece9">CordHR</span> — bringing HR, payroll and leave management to where small teams already are: WhatsApp.</p>
+      <p style="margin:0 0 20px">Right now the focus is <span style="color:#e9ece9">CordHR</span> — a full HR operating system: payroll, leave and compliance in one web dashboard, with a WhatsApp assistant so employees can handle requests from chat.</p>
     </div>
 
     <div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
@@ -366,7 +377,7 @@
           <input class="fld" name="metric" type="text" required placeholder="E.g. Cut payroll time 70%, reduce order errors" style="font:400 15px 'Instrument Sans';color:#e9ece9;background:#101210;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 15px;outline:none"/>
         </label>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
           <label style="display:flex;flex-direction:column;gap:9px">
             <span style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.04em;color:#c3c9c3">Do you have budget + data?</span>
             <select class="fld" name="resources" required style="font:400 15px 'Instrument Sans';color:#e9ece9;background:#101210;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 15px;outline:none;appearance:none">
@@ -386,7 +397,7 @@
           </label>
         </div>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
           <label style="display:flex;flex-direction:column;gap:9px">
             <span style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.04em;color:#c3c9c3">Email</span>
             <input class="fld" name="email" type="email" required placeholder="you@company.com" style="font:400 15px 'Instrument Sans';color:#e9ece9;background:#101210;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 15px;outline:none"/>
