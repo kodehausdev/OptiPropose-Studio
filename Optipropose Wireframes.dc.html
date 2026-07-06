@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#efece6;font-family:system-ui,-apple-system,sans-serif;color:#2a2a2a}
+  .dv-turn{padding:44px 48px 36px;border-bottom:1px solid rgba(0,0,0,.09);scroll-margin-top:16px}
+  .dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 24px}
+  .dv-tid{font:700 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+  .dv-tname{font:600 13px/1.3 system-ui,sans-serif;color:#1a1a1a}
+  .dv-opts{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+  .dv-opt{flex:none;display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px}
+  .dv-olabel{display:flex;align-items:baseline;gap:9px;font:400 12px/1.35 system-ui,sans-serif;color:rgba(0,0,0,.55);max-width:420px}
+  .dv-oid{font:700 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.09);color:#1a1a1a;border-radius:5px;text-decoration:none}
+  .dv-opt:target .dv-oid{background:#2a6ed6;color:#fff}
+  .dv-next{margin:26px 0 0;font:13px/1.6 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+  .dv-next a{color:#2a6ed6}
+  /* --- wireframe primitives --- */
+  .wf{width:420px;background:#fff;border:1.5px solid #cdc8bf;border-radius:10px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.07)}
+  .wf.dark{background:#22242a;border-color:#3a3d45}
+  .chrome{display:flex;align-items:center;gap:7px;padding:9px 12px;background:#e7e3db;border-bottom:1.5px solid #cdc8bf}
+  .dark .chrome{background:#2c2f36;border-bottom-color:#3a3d45}
+  .dot{width:9px;height:9px;border-radius:50%;background:#c3bdb2}
+  .urlbar{flex:1;height:16px;margin-left:6px;border-radius:6px;background:#f2efe9;font:600 9px ui-monospace,monospace;color:#8a857a;display:flex;align-items:center;padding:0 9px}
+  .dark .urlbar{background:#20222833;color:#9aa}
+  .ph{border:1.4px dashed #bdb7ac;border-radius:6px;background:repeating-linear-gradient(45deg,#f4f1eb,#f4f1eb 7px,#eae6de 7px,#eae6de 14px);display:flex;align-items:center;justify-content:center;font:600 9.5px ui-monospace,monospace;color:#a49e92;text-align:center;padding:6px}
+  .dark .ph{border-color:#4a4d55;background:repeating-linear-gradient(45deg,#2a2d34,#2a2d34 7px,#30333b 7px,#30333b 14px);color:#7a7f8a}
+  .ln{height:8px;border-radius:4px;background:#e2ddd3}
+  .dark .ln{background:#3a3d45}
+  .btnp{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:7px;background:#2a2a2a;color:#fff;font:600 10px system-ui;white-space:nowrap}
+  .dark .btnp{background:#e9e6df;color:#22242a}
+  .btng{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:7px;border:1.4px solid #c9c3b8;color:#4a4a4a;font:600 10px system-ui;white-space:nowrap}
+  .dark .btng{border-color:#4a4d55;color:#c9ccd2}
+  .lbl{font:600 10px system-ui;color:#4a4a4a}
+  .dark .lbl{color:#c9ccd2}
+  .eyebrow{font:700 8.5px ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#a49e92}
+  .note{font:400 15px/1.15 'Kalam',cursive;color:#2a6ed6;transform:rotate(-1.5deg)}
+  .note.r{color:#d0432f}
+  .card{border:1.3px solid #ddd8ce;border-radius:8px;padding:12px}
+  .dark .card{border-color:#3a3d45}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t3">
+  <div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Mix of <a class="dv-oid" href="#2c">2c</a> + <a class="dv-oid" href="#2a">2a</a> — dark directory, studio framing, your real apps</span></div>
+  <div class="dv-opts">
+
+    <!-- ===================== 3a ===================== -->
+    <div class="dv-opt" id="3a">
+      <div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a><b style="color:#333">Studio directory (dark).</b>&nbsp;2c's big product cards + status, wrapped in 2a's studio hero, "currently building" highlight, founder strip and full CAC footer. Real lineup: TCD Logistics, Optipropose, CordHR.</div>
+      <div class="wf dark">
+        <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="urlbar">optipropose.com</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px">
+          <span class="lbl" style="font-size:12px">◆ OPTIPROPOSE STUDIO</span>
+          <div style="display:flex;gap:14px;align-items:center"><span class="lbl" style="color:#8b909a">Products</span><span class="lbl" style="color:#8b909a">About</span><span class="btnp">Contact</span></div>
+        </div>
+        <!-- hero: 2a studio framing -->
+        <div style="padding:32px 24px 20px;display:flex;flex-direction:column;gap:11px">
+          <span class="eyebrow" style="color:#6f7480">Independent software studio · Abuja, NG</span>
+          <div style="font:700 23px/1.12 system-ui;color:#fff;letter-spacing:-.01em;max-width:310px">We design and build software, one product at a time.</div>
+          <div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:88%"></div><div class="ln" style="width:60%"></div></div>
+        </div>
+        <!-- currently building highlight -->
+        <div style="margin:0 24px 6px;padding:12px 14px;border:1.3px solid #3a3d45;border-radius:9px;display:flex;align-items:center;gap:12px;background:#26282f">
+          <div class="ph" style="width:34px;height:34px;flex:none;border-style:solid;color:#c9a24a">🌱</div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:5px"><span style="font:700 8px ui-monospace;letter-spacing:.12em;color:#c9a24a">◉ CURRENTLY BUILDING</span><span class="lbl" style="color:#fff">CordHR — HR AI assistant inside WhatsApp</span><div class="ln" style="width:80%;height:5px;background:#3a3d45"></div></div>
+        </div>
+        <!-- products header -->
+        <div style="padding:16px 24px 6px;display:flex;align-items:baseline;justify-content:space-between"><span class="lbl" style="color:#fff;font-size:11px">Products</span><span style="font:400 8px ui-monospace;color:#6f7480">2 live · 1 in progress</span></div>
+        <!-- big product cards: 2c style + 2a status -->
+        <div style="padding:8px 24px 24px;display:flex;flex-direction:column;gap:14px">
+          <div style="border:1.3px solid #3a3d45;border-radius:9px;overflow:hidden"><div class="ph" style="height:74px">TCD Logistics — screenshot</div><div style="padding:12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:center"><span class="lbl" style="color:#fff">TCD Logistics</span><span style="font:400 7.5px ui-monospace;color:#5a9a6a">● LIVE</span></div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:70%;height:6px"></div><span style="font:600 8px ui-monospace;color:#8b909a;margin-top:2px">View case →</span></div></div>
+          <div style="border:1.3px solid #3a3d45;border-radius:9px;overflow:hidden"><div class="ph" style="height:74px">Optipropose — screenshot</div><div style="padding:12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:center"><span class="lbl" style="color:#fff">Optipropose — AI proposal generator</span><span style="font:400 7.5px ui-monospace;color:#5a9a6a">● LIVE</span></div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:70%;height:6px"></div><span style="font:600 8px ui-monospace;color:#8b909a;margin-top:2px">Visit →</span></div></div>
+          <div style="border:1.3px solid #3a3d45;border-radius:9px;overflow:hidden;opacity:.85"><div class="ph" style="height:74px">CordHR — coming soon</div><div style="padding:12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:center"><span class="lbl" style="color:#fff">CordHR</span><span style="font:400 7.5px ui-monospace;color:#c9a24a">◔ BUILDING</span></div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:70%;height:6px"></div><span style="font:600 8px ui-monospace;color:#8b909a;margin-top:2px">Join waitlist →</span></div></div>
+        </div>
+        <!-- founder strip: 2a -->
+        <div style="padding:18px 24px;background:#26282f;border-top:1px solid #3a3d45;display:flex;gap:14px;align-items:center">
+          <div class="ph" style="width:44px;height:44px;border-radius:50%;flex:none;border-style:solid">founder</div>
+          <div style="display:flex;flex-direction:column;gap:5px;flex:1"><span class="lbl" style="color:#fff">Built by one developer</span><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:78%;height:6px"></div></div>
+        </div>
+        <!-- full CAC footer: 2a -->
+        <div style="padding:18px 24px;border-top:1px solid #3a3d45;display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:4px"><span class="lbl" style="color:#fff">◆ Optipropose Studio</span><span style="font:400 8px ui-monospace,monospace;color:#6f7480">RC 9335843 · TIN 2623743568013</span><span style="font:400 8px ui-monospace,monospace;color:#6f7480">Efab Estate, Abuja FCT · NG</span></div>
+          <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div class="ln" style="width:40px;height:6px"></div><div class="ln" style="width:40px;height:6px"></div><div class="ln" style="width:30px;height:6px"></div></div>
+        </div>
+      </div>
+      <div class="note" style="margin-left:8px">↑ 2c's cards, 2a's studio + CAC footer</div>
+    </div>
+
+  </div>
+  <p class="dv-next">Try next: "build <a class="dv-oid" href="#3a">3a</a> as the full site" · "make <a class="dv-oid" href="#3a">3a</a> light instead of dark" · "wireframe the About &amp; Privacy pages to match <a class="dv-oid" href="#3a">3a</a>" · "give TCD Logistics its own detail page"</p>
+</section>
+<section class="dv-turn" id="t2">
+  <div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Reframed as an indie software studio — apps lineup, maker-forward</span></div>
+  <div class="dv-opts">
+
+    <!-- ===================== 2a ===================== -->
+    <div class="dv-opt" id="2a">
+      <div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a><b style="color:#333">Studio + product lineup.</b>&nbsp;"Independent software studio." Apps shown as a grid — Optipropose is app #1, room for the next ones. Reads instantly as a real, ongoing business.</div>
+      <div class="wf">
+        <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="urlbar">optipropose.com</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid #eee6d9">
+          <span class="lbl" style="font-size:12px">◆ Optipropose Studio</span>
+          <div style="display:flex;gap:12px;align-items:center"><span class="lbl" style="color:#8a857a">Products</span><span class="lbl" style="color:#8a857a">About</span><span class="btng">Get in touch</span></div>
+        </div>
+        <!-- hero -->
+        <div style="padding:30px 26px 22px;display:flex;flex-direction:column;gap:11px">
+          <span class="eyebrow">Independent software studio · Abuja, NG</span>
+          <div style="font:700 21px/1.16 system-ui;color:#26251f;max-width:320px">We design and build software, one product at a time.</div>
+          <div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:92%"></div><div class="ln" style="width:64%"></div></div>
+        </div>
+        <!-- products grid -->
+        <div style="padding:8px 26px 4px"><div style="display:flex;align-items:baseline;justify-content:space-between"><span class="lbl" style="font-size:11px">Products</span><span style="font:400 8px ui-monospace;color:#a49e92">2 live · more coming</span></div></div>
+        <div style="padding:10px 26px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div class="card" style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center;gap:7px"><div class="ph" style="width:26px;height:26px;border-style:solid"></div><span style="font:400 7.5px ui-monospace;color:#5a9a6a">● LIVE</span></div><div class="lbl">Optipropose</div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:70%;height:6px"></div><span style="font:600 8px ui-monospace;color:#8a857a;margin-top:2px">Visit →</span></div>
+          <div class="card" style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center;gap:7px"><div class="ph" style="width:26px;height:26px;border-style:solid"></div><span style="font:400 7.5px ui-monospace;color:#5a9a6a">● LIVE</span></div><div class="lbl">App two</div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:70%;height:6px"></div><span style="font:600 8px ui-monospace;color:#8a857a;margin-top:2px">Visit →</span></div>
+          <div class="card" style="display:flex;flex-direction:column;gap:8px;opacity:.6"><div style="display:flex;align-items:center;gap:7px"><div class="ph" style="width:26px;height:26px;border-style:solid"></div><span style="font:400 7.5px ui-monospace;color:#a49e92">◔ SOON</span></div><div class="lbl">In progress</div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:70%;height:6px"></div></div>
+          <div class="card" style="display:flex;flex-direction:column;gap:8px;opacity:.6;border-style:dashed"><div class="ph" style="width:26px;height:26px;border-style:solid"></div><span style="font:400 8px ui-monospace;color:#a49e92">next idea…</span></div>
+        </div>
+        <!-- about maker strip -->
+        <div style="padding:20px 26px;background:#faf8f3;border-top:1px solid #eee6d9;display:flex;gap:14px;align-items:center">
+          <div class="ph" style="width:46px;height:46px;border-radius:50%;flex:none">founder</div>
+          <div style="display:flex;flex-direction:column;gap:5px;flex:1"><span class="lbl">Built by one developer</span><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:80%;height:6px"></div></div>
+        </div>
+        <!-- footer -->
+        <div style="padding:16px 26px;background:#f2efe9;border-top:1px solid #e6e0d4;display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:4px"><span class="lbl">◆ Optipropose Studio</span><span style="font:400 8px ui-monospace,monospace;color:#a49e92">RC 9335843 · TIN 2623743568013</span><span style="font:400 8px ui-monospace,monospace;color:#a49e92">Efab Estate, Abuja FCT · NG</span></div>
+          <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div class="ln" style="width:40px;height:6px"></div><div class="ln" style="width:40px;height:6px"></div><div class="ln" style="width:30px;height:6px"></div></div>
+        </div>
+      </div>
+      <div class="note" style="margin-left:8px">↑ apps as a growing lineup</div>
+    </div>
+
+    <!-- ===================== 2b ===================== -->
+    <div class="dv-opt" id="2b">
+      <div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a><b style="color:#333">Maker-forward / personal.</b>&nbsp;Founder note up top, "currently building" feel. Warm, human, indie. Apps as a simple honest list with status.</div>
+      <div class="wf">
+        <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="urlbar">optipropose.com</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid #eee6d9">
+          <span class="lbl" style="font-size:12px">Optipropose Studio</span>
+          <div style="display:flex;gap:12px;align-items:center"><span class="lbl" style="color:#8a857a">Work</span><span class="lbl" style="color:#8a857a">About</span><span class="lbl" style="color:#8a857a">Contact</span></div>
+        </div>
+        <!-- founder hero -->
+        <div style="padding:30px 26px 22px;display:flex;flex-direction:column;gap:12px">
+          <div class="ph" style="width:52px;height:52px;border-radius:50%">me</div>
+          <div style="font:700 18px/1.2 system-ui;color:#26251f;max-width:300px">Hi — I'm an indie developer building small, useful software.</div>
+          <div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:100%"></div><div class="ln" style="width:88%"></div><div class="ln" style="width:55%"></div></div>
+          <div style="display:flex;gap:8px;margin-top:2px"><span class="btng">Email me</span><span class="btng">Twitter/X</span></div>
+        </div>
+        <!-- currently building -->
+        <div style="margin:0 26px;padding:12px 14px;background:#26251f;border-radius:9px;display:flex;flex-direction:column;gap:6px">
+          <span style="font:700 8px ui-monospace;letter-spacing:.12em;color:#c9a24a">◉ CURRENTLY BUILDING</span>
+          <div class="ln" style="width:70%;background:#4a463c"></div>
+        </div>
+        <!-- work list -->
+        <div style="padding:22px 26px;display:flex;flex-direction:column;gap:0">
+          <span class="lbl" style="font-size:11px;margin-bottom:10px">Things I've shipped</span>
+          <div style="display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid #eee6d9"><div class="ph" style="width:30px;height:30px;flex:none;border-style:solid"></div><div style="flex:1;display:flex;flex-direction:column;gap:4px"><span class="lbl">Optipropose — AI proposal generator</span><div class="ln" style="width:90%;height:5px"></div></div><span style="font:400 7.5px ui-monospace;color:#5a9a6a">2025</span></div>
+          <div style="display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid #eee6d9"><div class="ph" style="width:30px;height:30px;flex:none;border-style:solid"></div><div style="flex:1;display:flex;flex-direction:column;gap:4px"><span class="lbl">Second app</span><div class="ln" style="width:80%;height:5px"></div></div><span style="font:400 7.5px ui-monospace;color:#a49e92">2026</span></div>
+          <div style="display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid #eee6d9;border-bottom:1px solid #eee6d9"><div class="ph" style="width:30px;height:30px;flex:none;border-style:solid"></div><div style="flex:1;display:flex;flex-direction:column;gap:4px"><span class="lbl">Experiment</span><div class="ln" style="width:70%;height:5px"></div></div><span style="font:400 7.5px ui-monospace;color:#a49e92">wip</span></div>
+        </div>
+        <!-- footer -->
+        <div style="padding:16px 26px;background:#f2efe9;border-top:1px solid #e6e0d4;display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:4px"><span class="lbl">Optipropose Studio</span><span style="font:400 8px ui-monospace,monospace;color:#a49e92">RC 9335843 · Abuja, NG</span></div>
+          <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div class="ln" style="width:40px;height:6px"></div><div class="ln" style="width:30px;height:6px"></div></div>
+        </div>
+      </div>
+      <div class="note r" style="margin-left:8px">← human, "one dev" energy</div>
+    </div>
+
+    <!-- ===================== 2c ===================== -->
+    <div class="dv-opt" id="2c">
+      <div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a><b style="color:#333">Product directory, minimal.</b>&nbsp;Apps dominate — a clean catalog of what the studio makes. Studio framing is a thin wrapper. Scales best as you ship more.</div>
+      <div class="wf dark">
+        <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="urlbar">optipropose.com</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px">
+          <span class="lbl" style="font-size:12px">◆ OPTIPROPOSE STUDIO</span>
+          <div style="display:flex;gap:14px;align-items:center"><span class="lbl" style="color:#8b909a">About</span><span class="btnp">Contact</span></div>
+        </div>
+        <!-- short hero -->
+        <div style="padding:34px 24px 24px;display:flex;flex-direction:column;gap:10px">
+          <div style="font:700 24px/1.08 system-ui;color:#fff;letter-spacing:-.01em;max-width:300px">Software we build.</div>
+          <div class="ln" style="width:60%"></div>
+        </div>
+        <!-- big product cards -->
+        <div style="padding:0 24px 26px;display:flex;flex-direction:column;gap:14px">
+          <div style="border:1.3px solid #3a3d45;border-radius:9px;overflow:hidden"><div class="ph" style="height:78px">Optipropose — screenshot</div><div style="padding:12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:center"><span class="lbl" style="color:#fff">Optipropose</span><span style="font:400 7.5px ui-monospace;color:#5a9a6a">● LIVE</span></div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:72%;height:6px"></div></div></div>
+          <div style="border:1.3px solid #3a3d45;border-radius:9px;overflow:hidden"><div class="ph" style="height:78px">App two — screenshot</div><div style="padding:12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:center"><span class="lbl" style="color:#fff">App two</span><span style="font:400 7.5px ui-monospace;color:#5a9a6a">● LIVE</span></div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:72%;height:6px"></div></div></div>
+          <div style="border:1.3px dashed #4a4d55;border-radius:9px;padding:20px;display:flex;align-items:center;justify-content:center"><span style="font:400 9px ui-monospace;color:#6f7480">next product coming soon</span></div>
+        </div>
+        <!-- footer -->
+        <div style="padding:18px 24px;border-top:1px solid #3a3d45;display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:4px"><span class="lbl" style="color:#fff">◆ Optipropose Studio</span><span style="font:400 8px ui-monospace,monospace;color:#6f7480">RC 9335843 · Abuja FCT, NG</span></div>
+          <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div class="ln" style="width:40px;height:6px"></div><div class="ln" style="width:30px;height:6px"></div></div>
+        </div>
+      </div>
+      <div class="note" style="margin-left:8px">apps are the hero ↑</div>
+    </div>
+
+  </div>
+  <p class="dv-next">Try next: "build <a class="dv-oid" href="#2a">2a</a> as the full site" · "combine <a class="dv-oid" href="#2a">2a</a>'s lineup with <a class="dv-oid" href="#2b">2b</a>'s founder note" · "wireframe the About &amp; Privacy pages for one of these" · "show <a class="dv-oid" href="#2c">2c</a> in a light theme"</p>
+</section>
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Homepage structure — 3 directions for optipropose.com</span></div>
+  <div class="dv-opts">
+
+    <!-- ===================== 1a ===================== -->
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a><b style="color:#333">Centered classic SaaS.</b>&nbsp;Safe, conversion-first, symmetrical. Big product shot below the fold. Easiest to make look "real" for Meta review.</div>
+      <div class="wf">
+        <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="urlbar">optipropose.com</span></div>
+        <!-- nav -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid #eee6d9">
+          <span class="lbl" style="font-size:12px">◆ Optipropose</span>
+          <div style="display:flex;gap:12px;align-items:center">
+            <span class="lbl" style="color:#8a857a">Product</span><span class="lbl" style="color:#8a857a">About</span><span class="btnp">Try free</span>
+          </div>
+        </div>
+        <!-- hero -->
+        <div style="padding:30px 34px 26px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px">
+          <span class="eyebrow">AI proposal generator</span>
+          <div style="font:700 22px/1.15 system-ui;color:#26251f;max-width:320px">Win more clients with proposals that write themselves</div>
+          <div style="width:250px;display:flex;flex-direction:column;gap:6px;align-items:center"><div class="ln" style="width:100%"></div><div class="ln" style="width:78%"></div></div>
+          <div style="display:flex;gap:8px;margin-top:4px"><span class="btnp">Generate a proposal</span><span class="btng">See how it works</span></div>
+        </div>
+        <!-- product shot -->
+        <div style="padding:0 26px"><div class="ph" style="height:150px">generator UI screenshot<br>(the actual live tool)</div></div>
+        <!-- trust -->
+        <div style="padding:16px 26px;display:flex;gap:16px;justify-content:center;align-items:center">
+          <span class="eyebrow" style="color:#bdb7ac">trusted by</span>
+          <div class="ph" style="width:44px;height:16px;border-style:solid"></div><div class="ph" style="width:44px;height:16px;border-style:solid"></div><div class="ph" style="width:44px;height:16px;border-style:solid"></div>
+        </div>
+        <!-- features 3col -->
+        <div style="padding:20px 26px;background:#faf8f3;border-top:1px solid #eee6d9;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+          <div class="card" style="display:flex;flex-direction:column;gap:7px"><div class="ph" style="width:22px;height:22px"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:60%;height:6px"></div></div>
+          <div class="card" style="display:flex;flex-direction:column;gap:7px"><div class="ph" style="width:22px;height:22px"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:60%;height:6px"></div></div>
+          <div class="card" style="display:flex;flex-direction:column;gap:7px"><div class="ph" style="width:22px;height:22px"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:60%;height:6px"></div></div>
+        </div>
+        <!-- how it works -->
+        <div style="padding:22px 26px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center">
+          <div style="font:700 13px system-ui;color:#26251f">How it works</div>
+          <div style="display:flex;gap:14px;width:100%;justify-content:space-between">
+            <div style="flex:1;display:flex;flex-direction:column;gap:5px;align-items:center"><div class="ph" style="width:30px;height:30px;border-radius:50%">1</div><div class="ln" style="width:70%"></div></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:5px;align-items:center"><div class="ph" style="width:30px;height:30px;border-radius:50%">2</div><div class="ln" style="width:70%"></div></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:5px;align-items:center"><div class="ph" style="width:30px;height:30px;border-radius:50%">3</div><div class="ln" style="width:70%"></div></div>
+          </div>
+        </div>
+        <!-- CTA band -->
+        <div style="margin:0 26px 22px;background:#26251f;border-radius:10px;padding:20px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center">
+          <div style="font:700 14px system-ui;color:#fff">Start generating today</div>
+          <span class="btnp" style="background:#fff;color:#26251f">Try free</span>
+        </div>
+        <!-- footer -->
+        <div style="padding:16px 26px;background:#f2efe9;border-top:1px solid #e6e0d4;display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:5px"><span class="lbl">◆ Optipropose Studio</span><span style="font:400 8px ui-monospace,monospace;color:#a49e92">RC 9335843 · Abuja, NG</span></div>
+          <div style="display:flex;gap:14px"><div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:34px;height:6px"></div><div class="ln" style="width:34px;height:6px"></div></div><div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:34px;height:6px"></div><div class="ln" style="width:34px;height:6px"></div></div></div>
+        </div>
+      </div>
+      <div class="note" style="margin-left:8px">↑ product shot front &amp; center</div>
+    </div>
+
+    <!-- ===================== 1b ===================== -->
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a><b style="color:#333">Split hero + live demo.</b>&nbsp;Shows the actual generator right in the hero — "the product is on this page." Best proof it's a real working tool.</div>
+      <div class="wf">
+        <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="urlbar">optipropose.com</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid #eee6d9">
+          <span class="lbl" style="font-size:12px">◆ Optipropose</span>
+          <div style="display:flex;gap:12px;align-items:center"><span class="lbl" style="color:#8a857a">Product</span><span class="lbl" style="color:#8a857a">About</span><span class="lbl" style="color:#8a857a">Privacy</span><span class="btnp">Sign in</span></div>
+        </div>
+        <!-- split hero -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:26px 22px;align-items:center">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span class="eyebrow">Proposals in seconds</span>
+            <div style="font:700 19px/1.15 system-ui;color:#26251f">Describe the job. Get a polished proposal.</div>
+            <div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:100%"></div><div class="ln" style="width:85%"></div></div>
+            <span class="btnp" style="align-self:flex-start;margin-top:2px">Generate now →</span>
+          </div>
+          <!-- live generator widget -->
+          <div class="card" style="background:#faf8f3;display:flex;flex-direction:column;gap:8px;border-color:#e0dacf">
+            <span class="eyebrow" style="color:#b0432f">live tool</span>
+            <div class="ph" style="height:40px;background:#fff;border-style:solid;justify-content:flex-start;align-items:flex-start;padding:7px;font-size:8px">Describe your project…</div>
+            <span class="btnp" style="width:100%;box-sizing:border-box">✦ Generate</span>
+            <div style="display:flex;flex-direction:column;gap:4px;padding-top:4px;border-top:1px dashed #d8d2c6"><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:92%;height:6px"></div><div class="ln" style="width:70%;height:6px"></div></div>
+          </div>
+        </div>
+        <!-- metrics strip -->
+        <div style="display:flex;justify-content:space-around;padding:16px 20px;background:#26251f">
+          <div style="text-align:center;display:flex;flex-direction:column;gap:4px"><span style="font:700 15px system-ui;color:#fff">10k+</span><span style="font:400 8px ui-monospace;color:#9a9488">proposals</span></div>
+          <div style="text-align:center;display:flex;flex-direction:column;gap:4px"><span style="font:700 15px system-ui;color:#fff">2 min</span><span style="font:400 8px ui-monospace;color:#9a9488">avg time</span></div>
+          <div style="text-align:center;display:flex;flex-direction:column;gap:4px"><span style="font:700 15px system-ui;color:#fff">98%</span><span style="font:400 8px ui-monospace;color:#9a9488">win rate</span></div>
+        </div>
+        <!-- alternating feature rows -->
+        <div style="padding:22px;display:flex;flex-direction:column;gap:18px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center"><div class="ph" style="height:70px"></div><div style="display:flex;flex-direction:column;gap:6px"><div class="lbl">Feature one</div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:80%;height:6px"></div></div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center"><div style="display:flex;flex-direction:column;gap:6px"><div class="lbl">Feature two</div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:80%;height:6px"></div></div><div class="ph" style="height:70px"></div></div>
+        </div>
+        <!-- footer -->
+        <div style="padding:16px 22px;background:#f2efe9;border-top:1px solid #e6e0d4;display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:5px"><span class="lbl">◆ Optipropose Studio</span><span style="font:400 8px ui-monospace,monospace;color:#a49e92">RC 9335843 · Abuja, NG</span></div>
+          <div style="display:flex;gap:14px"><div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:34px;height:6px"></div><div class="ln" style="width:34px;height:6px"></div></div></div>
+        </div>
+      </div>
+      <div class="note r" style="margin-left:8px">← real generator sits in the hero</div>
+    </div>
+
+    <!-- ===================== 1c ===================== -->
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a><b style="color:#333">Bold editorial, dark.</b>&nbsp;Oversized type, lots of space, confident brand feel. Fewer sections, more attitude. Stands out but riskier for a "trust" audience.</div>
+      <div class="wf dark">
+        <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="urlbar">optipropose.com</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px">
+          <span class="lbl" style="font-size:12px">◆ OPTIPROPOSE</span>
+          <div style="display:flex;gap:14px;align-items:center"><span class="lbl" style="color:#8b909a">Product</span><span class="lbl" style="color:#8b909a">About</span><span class="btnp">Try free</span></div>
+        </div>
+        <!-- big statement hero -->
+        <div style="padding:44px 24px 34px;display:flex;flex-direction:column;gap:16px">
+          <span class="eyebrow" style="color:#6f7480">✦ AI proposal generator</span>
+          <div style="font:700 30px/1.02 system-ui;color:#fff;letter-spacing:-.02em">Proposals,<br>reinvented.</div>
+          <div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:70%"></div><div class="ln" style="width:50%"></div></div>
+          <span class="btnp" style="align-self:flex-start;margin-top:6px">Start free →</span>
+        </div>
+        <!-- full-bleed product -->
+        <div style="padding:0 20px 24px"><div class="ph" style="height:170px">full-bleed generator showcase</div></div>
+        <!-- big dark statement -->
+        <div style="padding:34px 24px;border-top:1px solid #3a3d45;display:flex;flex-direction:column;gap:10px">
+          <div style="font:700 18px/1.2 system-ui;color:#fff;max-width:300px">One tool, from blank page to signed deal.</div>
+          <div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:90%"></div><div class="ln" style="width:75%"></div></div>
+        </div>
+        <!-- 2col features -->
+        <div style="padding:0 24px 30px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="display:flex;flex-direction:column;gap:7px"><div class="ph" style="width:24px;height:24px"></div><div class="lbl">Feature</div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:70%;height:6px"></div></div>
+          <div style="display:flex;flex-direction:column;gap:7px"><div class="ph" style="width:24px;height:24px"></div><div class="lbl">Feature</div><div class="ln" style="width:100%;height:6px"></div><div class="ln" style="width:70%;height:6px"></div></div>
+        </div>
+        <!-- footer -->
+        <div style="padding:18px 24px;border-top:1px solid #3a3d45;display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:5px"><span class="lbl" style="color:#fff">◆ Optipropose Studio</span><span style="font:400 8px ui-monospace,monospace;color:#6f7480">RC 9335843 · Abuja, NG</span></div>
+          <div style="display:flex;gap:14px"><div style="display:flex;flex-direction:column;gap:5px"><div class="ln" style="width:34px;height:6px"></div><div class="ln" style="width:34px;height:6px"></div></div></div>
+        </div>
+      </div>
+      <div class="note" style="margin-left:8px">big type, dark, minimal ↑</div>
+    </div>
+
+  </div>
+  <p class="dv-next">Try next: "flesh out <a class="dv-oid" href="#1b">1b</a> as the real site" · "wireframe the About &amp; Privacy pages" · "make <a class="dv-oid" href="#1a">1a</a> but dark like <a class="dv-oid" href="#1c">1c</a>" · "show me the full page flow for one of these"</p>
+</section>
+
+</x-dc>
+</body>
+</html>
