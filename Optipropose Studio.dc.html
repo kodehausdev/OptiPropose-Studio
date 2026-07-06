@@ -427,7 +427,7 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#34d39a&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#34d39a&quot;,&quot;#3b82f6&quot;,&quot;#8b5cf6&quot;,&quot;#f59e0b&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;briefApiUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;http://localhost:4000/api/brief&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact form&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#34d39a&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#34d39a&quot;,&quot;#3b82f6&quot;,&quot;#8b5cf6&quot;,&quot;#f59e0b&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;briefApiUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://optipropose-server-production.up.railway.app/api/brief&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact form&quot;}}">
 class Component extends DCLogic {
   state = { view: 'home', briefStatus: 'idle' };
   go(v) {
@@ -470,7 +470,7 @@ class Component extends DCLogic {
           company: f.company.value || null,
         };
         this.setState({ briefStatus: 'sending' });
-        fetch(this.props.briefApiUrl ?? 'http://localhost:4000/api/brief', {
+        fetch(this.props.briefApiUrl ?? 'https://optipropose-server-production.up.railway.app/api/brief', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
