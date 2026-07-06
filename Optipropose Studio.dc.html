@@ -41,6 +41,14 @@
   .fld:focus{border-color:color-mix(in srgb, var(--accent,#34d39a) 55%, rgba(255,255,255,.12)) !important;box-shadow:0 0 0 3px color-mix(in srgb, var(--accent,#34d39a) 14%, transparent)}
   select.fld{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a938c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px !important}
   select.fld option{background:#101210;color:#e9ece9}
+  @media (max-width:700px){
+    .navRow{padding:10px 16px !important;row-gap:4px !important}
+    .navLinks{gap:14px !important}
+    .navLinks a{font-size:13px !important}
+    .navCta{padding:7px 12px !important;font-size:12px !important}
+    .cardImgBox{height:auto !important}
+    .cardImg{height:auto !important;object-fit:unset !important;object-position:unset !important}
+  }
 </style>
 </helmet>
 
@@ -48,18 +56,18 @@
 
   <!-- ===================== NAV ===================== -->
   <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,11,10,.72);border-bottom:1px solid rgba(255,255,255,.07)">
-    <div style="max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;row-gap:8px">
+    <div class="navRow" style="max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;row-gap:8px">
       <a onClick="{{ goHome }}" style="display:flex;align-items:center;gap:11px;cursor:pointer">
         <span style="width:28px;height:28px;border-radius:6px;background:var(--accent,#34d39a);display:flex;align-items:center;justify-content:center">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#07130d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
         </span>
         <span style="font:400 15px 'Space Grotesk',sans-serif;letter-spacing:-.01em;color:#a1a1aa"><span style="font-weight:700;color:#ffffff">Optipropose</span> Studio</span>
       </a>
-      <div style="display:flex;align-items:center;gap:clamp(14px,2.5vw,26px);flex-wrap:wrap">
+      <div class="navLinks" style="display:flex;align-items:center;gap:clamp(14px,2.5vw,26px);flex-wrap:wrap">
         <a class="lnk" onClick="{{ goProducts }}" style="font-size:14px;color:#a4ada6;cursor:pointer">Products</a>
         <a class="lnk" onClick="{{ goAbout }}" style="font-size:14px;color:#a4ada6;cursor:pointer">About</a>
         <a class="lnk" onClick="{{ goPrivacy }}" style="font-size:14px;color:#a4ada6;cursor:pointer">Privacy</a>
-        <a class="btnHov" onClick="{{ goContact }}" style="font:600 13px 'Instrument Sans';padding:9px 16px;border-radius:9px;border:1px solid rgba(255,255,255,.18);color:#e9ece9;cursor:pointer">Get in touch</a>
+        <a class="btnHov navCta" onClick="{{ goContact }}" style="font:600 13px 'Instrument Sans';padding:9px 16px;border-radius:9px;border:1px solid rgba(255,255,255,.18);color:#e9ece9;cursor:pointer">Get in touch</a>
       </div>
     </div>
   </div>
@@ -179,7 +187,7 @@
 
         <!-- TCD -->
         <div class="cardHov" style="border:1px solid rgba(255,255,255,.09);border-radius:16px;overflow:hidden;background:#101210">
-          <div style="height:180px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)"><img src="assets/tcd.png" alt="TCDGO" style="width:100%;height:100%;object-fit:cover;object-position:top left"/></div>
+          <div class="cardImgBox" style="height:180px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)"><img class="cardImg" src="assets/tcd.png" alt="TCDGO" style="width:100%;height:100%;object-fit:cover;object-position:top left"/></div>
           <div style="padding:20px">
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
               <span style="font:500 10px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#8a938c;border:1px solid rgba(255,255,255,.14);padding:3px 8px;border-radius:20px">CLIENT WORK</span>
@@ -193,7 +201,7 @@
 
         <!-- Optipropose -->
         <div class="cardHov" style="border:1px solid rgba(255,255,255,.09);border-radius:16px;overflow:hidden;background:#101210">
-          <div style="height:180px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)"><img src="assets/optipropose.png" alt="Optipropose" style="width:100%;height:100%;object-fit:cover;object-position:top left"/></div>
+          <div class="cardImgBox" style="height:180px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)"><img class="cardImg" src="assets/optipropose.png" alt="Optipropose" style="width:100%;height:100%;object-fit:cover;object-position:top left"/></div>
           <div style="padding:20px">
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
               <span style="font:500 10px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#8a938c;border:1px solid rgba(255,255,255,.14);padding:3px 8px;border-radius:20px">PRODUCT</span>
@@ -207,7 +215,7 @@
 
         <!-- CordHR -->
         <div class="cardHov" style="border:1px solid rgba(255,255,255,.09);border-radius:16px;overflow:hidden;background:#101210">
-          <div style="height:180px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)"><img src="assets/cordhr.png" alt="CordHR" style="width:100%;height:100%;object-fit:cover;object-position:top left"/></div>
+          <div class="cardImgBox" style="height:180px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)"><img class="cardImg" src="assets/cordhr.png" alt="CordHR" style="width:100%;height:100%;object-fit:cover;object-position:top left"/></div>
           <div style="padding:20px">
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
               <span style="font:500 10px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#8a938c;border:1px solid rgba(255,255,255,.14);padding:3px 8px;border-radius:20px">PRODUCT</span>
@@ -221,7 +229,7 @@
 
         <!-- MedLab AI Receptionist -->
         <div class="cardHov" style="border:1px solid rgba(255,255,255,.09);border-radius:16px;overflow:hidden;background:#101210">
-          <div style="height:180px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)"><img src="assets/medlab.png" alt="MedLab AI Receptionist" style="width:100%;height:100%;object-fit:cover;object-position:top left"/></div>
+          <div class="cardImgBox" style="height:180px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)"><img class="cardImg" src="assets/medlab.png" alt="MedLab AI Receptionist" style="width:100%;height:100%;object-fit:cover;object-position:top left"/></div>
           <div style="padding:20px">
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
               <span style="font:500 10px 'JetBrains Mono',monospace;letter-spacing:.1em;color:#8a938c;border:1px solid rgba(255,255,255,.14);padding:3px 8px;border-radius:20px">CLIENT WORK</span>
