@@ -2,3 +2,4 @@ server/target
 server/.env
 server/*.db
 .claude/settings.local.json
+CLAUDE.md
