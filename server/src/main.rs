@@ -77,7 +77,7 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind(&addr)
         .await
         .expect("failed to bind port");
-    tracing::info!("listening on {addr}");
+    tracing::info!("optipropose-server listening on {addr}");
     axum::serve(listener, app).await.expect("server error");
 }
 
