@@ -49,12 +49,12 @@
     .navCta{padding:7px 12px !important;font-size:12px !important}
     .cardImgBox{height:auto !important}
     .cardImg{height:auto !important;object-fit:unset !important;object-position:unset !important}
-    .backToTop{bottom:18px !important;right:18px !important;width:40px !important;height:40px !important}
+    .backToTop{bottom:calc(18px + var(--btt-offset,0px)) !important;right:18px !important;width:40px !important;height:40px !important}
   }
 </style>
 </helmet>
 
-<div style="--accent:{{ accentVar }};min-height:100vh;background:radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, var(--accent,#34d39a) 7%, #0a0b0a), #0a0b0a 60%)">
+<div style="--accent:{{ accentVar }};--btt-offset:{{ backToTopOffset }};min-height:100vh;background:radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, var(--accent,#34d39a) 7%, #0a0b0a), #0a0b0a 60%)">
 
   <!-- ===================== NAV ===================== -->
   <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,11,10,.72);border-bottom:1px solid rgba(255,255,255,.07)">
@@ -475,7 +475,7 @@
 
   <!-- ===================== BACK TO TOP ===================== -->
   <sc-if value="{{ showBackToTop }}" hint-placeholder-val="{{ false }}">
-    <button class="btnHov backToTop" onClick="{{ scrollTop }}" aria-label="Back to top" style="position:fixed;bottom:28px;right:28px;z-index:60;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:var(--accent,#34d39a);color:#07130d;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.5)">
+    <button class="btnHov backToTop" onClick="{{ scrollTop }}" aria-label="Back to top" style="position:fixed;bottom:calc(28px + var(--btt-offset,0px));right:28px;z-index:60;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:var(--accent,#34d39a);color:#07130d;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.5)">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#07130d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
     </button>
   </sc-if>
@@ -484,7 +484,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#34d39a&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#34d39a&quot;,&quot;#3b82f6&quot;,&quot;#8b5cf6&quot;,&quot;#f59e0b&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;briefApiUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://optipropose-server-production.up.railway.app/api/brief&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact form&quot;}}">
 class Component extends DCLogic {
-  state = { view: 'home', briefStatus: 'idle', scrolled: false };
+  state = { view: 'home', briefStatus: 'idle', scrolled: false, vvOffset: 0 };
   go(v) {
     this.setState({ view: v });
     try { window.scrollTo({ top: 0, behavior: 'auto' }); } catch (e) {}
@@ -495,15 +495,33 @@ class Component extends DCLogic {
       if (scrolled !== this.state.scrolled) this.setState({ scrolled });
     };
     window.addEventListener('scroll', this.onScroll, { passive: true });
+    // Mobile browsers size position:fixed against the full layout viewport,
+    // so a bottom-pinned button can end up hidden behind the toolbar/gesture
+    // bar when it's showing. Track the visual viewport and offset for it.
+    if (window.visualViewport) {
+      this.onViewportChange = () => {
+        const vv = window.visualViewport;
+        const offset = Math.max(0, Math.round(window.innerHeight - (vv.height + vv.offsetTop)));
+        if (offset !== this.state.vvOffset) this.setState({ vvOffset: offset });
+      };
+      window.visualViewport.addEventListener('resize', this.onViewportChange);
+      window.visualViewport.addEventListener('scroll', this.onViewportChange);
+      this.onViewportChange();
+    }
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScroll);
+    if (window.visualViewport && this.onViewportChange) {
+      window.visualViewport.removeEventListener('resize', this.onViewportChange);
+      window.visualViewport.removeEventListener('scroll', this.onViewportChange);
+    }
   }
   renderVals() {
     const v = this.state.view;
     const briefStatus = this.state.briefStatus || 'idle';
     return {
       accentVar: this.props.accent ?? '#34d39a',
+      backToTopOffset: (this.state.vvOffset || 0) + 'px',
       isHome: v === 'home',
       isProducts: v === 'products',
       isAbout: v === 'about',
