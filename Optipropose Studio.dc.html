@@ -50,6 +50,7 @@
     .cardImgBox{height:auto !important}
     .cardImg{height:auto !important;object-fit:unset !important;object-position:unset !important}
     .backToTop{bottom:calc(18px + var(--btt-offset,0px)) !important;right:18px !important;width:40px !important;height:40px !important}
+    .founderCard{flex-direction:column !important;align-items:flex-start !important}
   }
 </style>
 </helmet>
@@ -248,7 +249,7 @@
 
     <!-- founder -->
     <section style="max-width:1120px;margin:0 auto;padding:70px 28px">
-      <div style="border:1px solid rgba(255,255,255,.08);border-radius:18px;background:#0e100f;padding:40px;display:flex;gap:30px;align-items:center;flex-wrap:wrap">
+      <div class="founderCard" style="border:1px solid rgba(255,255,255,.08);border-radius:18px;background:#0e100f;padding:40px;display:flex;gap:30px;align-items:center;flex-wrap:wrap">
         <div style="width:96px;height:96px;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent,#34d39a) 30%,#171a17),#171a17);display:flex;align-items:center;justify-content:center;font:700 34px 'Space Grotesk',sans-serif;color:var(--accent,#34d39a);flex:none">k</div>
         <div style="flex:1;min-width:280px">
           <div style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#8a938c;margin-bottom:10px">The studio</div>
